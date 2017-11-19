@@ -44,10 +44,7 @@ const server = http.createServer((req,res)=> {
 		stripRes.statusCode=res.statusCode;
 		stripRes._header=res._header;
  
-
-		//console.log(req);
-		//console.log('\n\n\n--------------------------------------');
-		//console.log(res);
+ 
 
 		var strReq = JSON.stringify(stripReq, null, 2);
 		var strRes = JSON.stringify(stripRes, null, 2);
@@ -55,7 +52,7 @@ const server = http.createServer((req,res)=> {
 
 
 		data=data.replace('{{ res }}', strRes);
-		data=data.replace('{{ req }}', strReq);
+	    data=data.replace('{{ req }}', strReq);
 		res.end(data);
 
 		}
